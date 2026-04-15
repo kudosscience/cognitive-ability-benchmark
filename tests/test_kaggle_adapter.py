@@ -39,6 +39,20 @@ def test_export_kaggle_assets_writes_expected_files(tmp_path: Path) -> None:
         assert dataset_path.exists()
         assert _count_jsonl_rows(dataset_path) == config.num_samples_per_task
 
+        first_row = json.loads(dataset_path.read_text(encoding="utf-8").splitlines()[0])
+        assert "expected_output" not in first_row
+        assert "sample_id" in first_row
+
+        if task["task_name"] == "habit_override":
+            assert "visited_letters" not in first_row["metadata"]
+
+        if task["task_name"] == "rule_shift":
+            assert "trace" not in first_row["metadata"]
+
+        if task["task_name"] == "conflict_planning":
+            assert "canonical_plan" not in first_row["metadata"]
+            assert "trap_action_ids" not in first_row["metadata"]
+
 
 def test_export_kaggle_notebook_contains_choose_hint(tmp_path: Path) -> None:
     config = KaggleAdapterConfig(
@@ -53,4 +67,5 @@ def test_export_kaggle_notebook_contains_choose_hint(tmp_path: Path) -> None:
     notebook = Path(result["notebook_script"]).read_text(encoding="utf-8")
 
     assert "@kbench.task(name=\"cogniflex_executive_functions\")" in notebook
+    assert "COGNIFLEX_PRIVATE_BUNDLE_PATH" in notebook
     assert "%choose cogniflex_executive_functions" in notebook

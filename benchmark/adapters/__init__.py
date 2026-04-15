@@ -2,6 +2,7 @@
 
 from benchmark.adapters.kaggle_benchmarks_adapter import (
     KaggleAdapterConfig,
+    export_private_answer_bundle,
     export_kaggle_assets,
     generate_kaggle_notebook_script,
 )
@@ -9,5 +10,6 @@ from benchmark.adapters.kaggle_benchmarks_adapter import (
 __all__ = [
     "KaggleAdapterConfig",
     "export_kaggle_assets",
+    "export_private_answer_bundle",
     "generate_kaggle_notebook_script",
 ]

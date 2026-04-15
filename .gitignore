@@ -13,3 +13,5 @@ dist/
 build/
 .env
 .venv/
+outputs/private/
+outputs/submission_predictions.jsonl

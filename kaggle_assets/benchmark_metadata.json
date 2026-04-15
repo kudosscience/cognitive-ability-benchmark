@@ -22,5 +22,12 @@
     "task_creation_url": "https://www.kaggle.com/benchmarks/tasks/new",
     "docs_url": "https://www.kaggle.com/docs/benchmarks",
     "sdk_repo": "https://github.com/Kaggle/kaggle-benchmarks"
+  },
+  "security_design": {
+    "public_dataset_contains_reference_answers": false,
+    "held_out_answers_shipped_in_public_assets": false,
+    "organizer_private_bundle_required_for_official_scoring": true,
+    "official_scoring_script": "scripts/score_submission.py",
+    "private_bundle_export_script": "scripts/export_private_answer_bundle.py"
   }
 }
