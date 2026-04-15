@@ -114,7 +114,7 @@ Pilot sweep implementation:
   - outputs/pilot_sweep_overall.csv
   - outputs/pilot_sweep_report.md
 
-The sweep runner simulates a model ladder (small -> medium -> large -> oracle upper bound) with task-wise skill and difficulty sensitivity controls. This gives a tunable, reproducible early-signal for discriminatory power before expensive model runs.
+The sweep runner simulates a model ladder (small -> medium -> large -> frontier -> oracle upper bound) with task-wise skill and difficulty sensitivity controls. A tuned `reasoning-frontier-xl` profile was added to better mirror expected Kaggle model-family separation. This gives a tunable, reproducible early-signal for discriminatory power before expensive model runs.
 
 Reproducibility commands:
 
@@ -133,7 +133,8 @@ Pilot sweep overall scores (750 samples per model):
 | pattern-matcher-small | 0.241 |
 | rule-aware-medium | 0.480 |
 | planner-large | 0.669 |
-| oracle-upper-bound | 0.989 |
+| reasoning-frontier-xl | 0.844 |
+| oracle-upper-bound | 0.993 |
 
 Task-level means:
 
@@ -142,11 +143,12 @@ Task-level means:
 | pattern-matcher-small | 0.348 | 0.232 | 0.144 |
 | rule-aware-medium | 0.572 | 0.488 | 0.380 |
 | planner-large | 0.684 | 0.696 | 0.628 |
-| oracle-upper-bound | 0.984 | 1.000 | 0.984 |
+| reasoning-frontier-xl | 0.848 | 0.892 | 0.792 |
+| oracle-upper-bound | 0.984 | 0.996 | 1.000 |
 
 Observed signal quality:
 
-- Strong rank ordering across capability tiers indicates useful discriminatory power
+- Strong five-tier rank ordering across capability tiers indicates useful discriminatory power
 - Difficulty degradation is visible, especially for smaller profiles on rule_shift and conflict_planning
 - No ceiling effect for realistic profiles, and no floor collapse for all models at all levels
 
@@ -164,6 +166,57 @@ CogniFlex produces interpretable gradients and explicit failure modes tied to ex
 
 - Submitted by Kudos Science
 - No additional institutional affiliation declared in this repository
+
+### Final submission checklist mapped to Kaggle form fields
+
+| Kaggle form field | Submission value | Source in repository |
+| --- | --- | --- |
+| Project Name | CogniFlex: Habit Override, Rule Shift, and Conflict Planning | This README, Project Name section |
+| Team / Author | Kudos Science | This README, Your Team section |
+| Track | Executive Functions | This README, Problem Statement section |
+| Problem Statement | Executive-control gap in current LLM evaluation | This README, Problem Statement section |
+| Task / Benchmark Construction | Deterministic generators + exact-match scorers | This README, Task & benchmark construction section |
+| Dataset Description | 3 synthetic tasks, 250 samples each, seeded reproducibility | This README, Dataset section |
+| Technical Details | Core modules + scripts + reproducibility commands | This README, Technical details section |
+| Results / Insights / Conclusions | Five-model pilot ladder + task-level breakdown | This README, Results section and outputs/pilot_sweep_report.md |
+| Organizational Affiliations | Submitted by Kudos Science | This README, Organizational affiliations section |
+| References & Citations | DeepMind + Kaggle docs/SDK sources | This README, References & citations section |
+
+Pre-submit completion checklist:
+
+- [ ] Paste Project Name exactly as shown above.
+- [ ] Confirm Team name is `Kudos Science`.
+- [ ] Select Executive Functions track.
+- [ ] Paste Problem Statement and Task Construction sections.
+- [ ] Confirm dataset counts match: 750 total samples (250 per task).
+- [ ] Attach notebook and dataset files from the release manifest below.
+- [ ] Paste updated Results table after final Kaggle model runs.
+- [ ] Verify references are present and links resolve.
+
+### Release package manifest (exact files to attach/upload)
+
+Required benchmark assets:
+
+- kaggle_assets/benchmark_metadata.json
+- kaggle_assets/notebooks/cogniflex_task.py
+- kaggle_assets/data/habit_override.jsonl
+- kaggle_assets/data/rule_shift.jsonl
+- kaggle_assets/data/conflict_planning.jsonl
+
+Required writeup evidence artifacts:
+
+- outputs/pilot_sweep_overall.csv
+- outputs/pilot_sweep_task_summary.csv
+- outputs/pilot_sweep_difficulty_summary.csv
+- outputs/pilot_sweep_report.md
+- README.md
+
+Optional reproducibility bundle:
+
+- configs/kaggle_adapter.json
+- configs/pilot_sweep.json
+- scripts/export_kaggle_assets.py
+- scripts/run_pilot_sweep.py
 
 ### References & citations
 

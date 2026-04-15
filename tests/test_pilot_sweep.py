@@ -38,6 +38,7 @@ def test_pilot_sweep_overall_ranking_shows_gradient() -> None:
         "pattern-matcher-small",
         "rule-aware-medium",
         "planner-large",
+        "reasoning-frontier-xl",
         "oracle-upper-bound",
     ]
 

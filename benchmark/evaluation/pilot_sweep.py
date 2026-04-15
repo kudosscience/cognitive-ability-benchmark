@@ -209,6 +209,15 @@ def default_profiles() -> list[ModelProfile]:
             difficulty_sensitivity=0.08,
         ),
         ModelProfile(
+            name="reasoning-frontier-xl",
+            task_skill={
+                "habit_override": 0.95,
+                "rule_shift": 0.94,
+                "conflict_planning": 0.9,
+            },
+            difficulty_sensitivity=0.04,
+        ),
+        ModelProfile(
             name="oracle-upper-bound",
             task_skill={
                 "habit_override": 0.995,

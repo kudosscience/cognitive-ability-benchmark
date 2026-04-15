@@ -1,5 +1,6 @@
 model_name,overall_score,num_samples
-oracle-upper-bound,0.9893333333333333,750
+oracle-upper-bound,0.9933333333333333,750
 pattern-matcher-small,0.24133333333333334,750
 planner-large,0.6693333333333333,750
+reasoning-frontier-xl,0.844,750
 rule-aware-medium,0.48,750

@@ -4,10 +4,11 @@
 
 | Rank | Model | Overall Score | Samples |
 | --- | --- | ---: | ---: |
-| 1 | oracle-upper-bound | 0.989 | 750 |
-| 2 | planner-large | 0.669 | 750 |
-| 3 | rule-aware-medium | 0.480 | 750 |
-| 4 | pattern-matcher-small | 0.241 | 750 |
+| 1 | oracle-upper-bound | 0.993 | 750 |
+| 2 | reasoning-frontier-xl | 0.844 | 750 |
+| 3 | planner-large | 0.669 | 750 |
+| 4 | rule-aware-medium | 0.480 | 750 |
+| 5 | pattern-matcher-small | 0.241 | 750 |
 
 ## Interpretation
 
