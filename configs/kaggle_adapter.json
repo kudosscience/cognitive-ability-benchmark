@@ -1,0 +1,8 @@
+{
+  "benchmark_name": "CogniFlex Executive Functions",
+  "benchmark_slug": "cogniflex-executive-functions",
+  "track": "Executive Functions",
+  "num_samples_per_task": 250,
+  "seed": 20260415,
+  "output_dir": "kaggle_assets"
+}

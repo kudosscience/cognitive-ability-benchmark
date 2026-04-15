@@ -1,0 +1,1 @@
+{"$schema":"https://cyclonedx.org/schema/bom-1.6.schema.json","bomFormat":"CycloneDX","components":[{"bom-ref":"application:Root","name":"Root","type":"application"}],"dependencies":[],"metadata":{"manufacturer":{"name":"Snyk","url":["https://snyk.io"]}},"services":[],"specVersion":"1.6","version":1}

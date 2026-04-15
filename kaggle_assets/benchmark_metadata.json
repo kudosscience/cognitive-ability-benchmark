@@ -1,0 +1,26 @@
+{
+  "benchmark_name": "CogniFlex Executive Functions",
+  "benchmark_slug": "cogniflex-executive-functions",
+  "track": "Executive Functions",
+  "num_samples_per_task": 250,
+  "seed": 20260415,
+  "tasks": [
+    {
+      "task_name": "habit_override",
+      "dataset_path": "./data/habit_override.jsonl"
+    },
+    {
+      "task_name": "rule_shift",
+      "dataset_path": "./data/rule_shift.jsonl"
+    },
+    {
+      "task_name": "conflict_planning",
+      "dataset_path": "./data/conflict_planning.jsonl"
+    }
+  ],
+  "kaggle_notes": {
+    "task_creation_url": "https://www.kaggle.com/benchmarks/tasks/new",
+    "docs_url": "https://www.kaggle.com/docs/benchmarks",
+    "sdk_repo": "https://github.com/Kaggle/kaggle-benchmarks"
+  }
+}

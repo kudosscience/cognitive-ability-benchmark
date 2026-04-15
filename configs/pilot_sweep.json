@@ -1,0 +1,42 @@
+{
+  "seed": 20260415,
+  "num_samples_per_task": 250,
+  "model_profiles": [
+    {
+      "name": "pattern-matcher-small",
+      "task_skill": {
+        "habit_override": 0.62,
+        "rule_shift": 0.48,
+        "conflict_planning": 0.4
+      },
+      "difficulty_sensitivity": 0.14
+    },
+    {
+      "name": "rule-aware-medium",
+      "task_skill": {
+        "habit_override": 0.78,
+        "rule_shift": 0.71,
+        "conflict_planning": 0.58
+      },
+      "difficulty_sensitivity": 0.11
+    },
+    {
+      "name": "planner-large",
+      "task_skill": {
+        "habit_override": 0.89,
+        "rule_shift": 0.85,
+        "conflict_planning": 0.8
+      },
+      "difficulty_sensitivity": 0.08
+    },
+    {
+      "name": "oracle-upper-bound",
+      "task_skill": {
+        "habit_override": 0.995,
+        "rule_shift": 0.995,
+        "conflict_planning": 0.995
+      },
+      "difficulty_sensitivity": 0.0
+    }
+  ]
+}
